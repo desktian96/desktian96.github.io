@@ -1,0 +1,1564 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>先锋va资源网 - 官方视频平台_原创高清内容与创作者社区</title>
+<meta name="description" content="先锋va资源网官方网站，专注原创高清视频内容与创作者社区，企业级视频品牌平台，提供资源分享、教程干货、深度测评与行业观察，持续运营值得信赖。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23141b2e'/%3E%3Cpath d='M26 18l20 14-20 14z' fill='%2300e0a8'/%3E%3C/svg%3E">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --va-bg:#0d1220;
+    --va-bg2:#121a2c;
+    --va-card:#161f33;
+    --va-card2:#1c2740;
+    --va-line:#263350;
+    --va-line2:#334368;
+    --va-text:#e7ecf7;
+    --va-muted:#93a1bf;
+    --va-dim:#6b7a99;
+    --va-neon:#00e0a8;
+    --va-neon2:#16f2c0;
+    --va-accent:#7c6bff;
+    --va-warn:#ffb648;
+    --va-radius:16px;
+  }
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--va-bg);
+    color:var(--va-text);
+    font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+  ul{list-style:none}
+  .va-wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  .va-anchor-offset{scroll-margin-top:132px}
+
+  /* ============ 公告条 + 页头 吸顶 ============ */
+  .va-topbar{
+    position:sticky;top:0;z-index:120;
+    background:linear-gradient(90deg,#0b101c,#101a30 45%,#0b1524);
+    border-bottom:1px solid var(--va-line);
+  }
+  .va-announce{
+    background:linear-gradient(90deg,rgba(0,224,168,.16),rgba(124,107,255,.16));
+    border-bottom:1px solid var(--va-line);
+    font-size:13px;
+  }
+  .va-announce-inner{
+    display:flex;align-items:center;gap:12px;
+    padding:8px 0;overflow-x:auto;white-space:nowrap;
+    scrollbar-width:none;
+  }
+  .va-announce-inner::-webkit-scrollbar{display:none}
+  .va-announce-tag{
+    flex:0 0 auto;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:2px 10px;border-radius:999px;
+    background:var(--va-neon);color:#06120f;
+  }
+  .va-announce-item{color:#b9c6e2;font-size:13px;display:inline-flex;align-items:center;gap:8px}
+  .va-announce-item b{color:var(--va-neon2);font-weight:600}
+  .va-announce-sep{color:var(--va-line2)}
+
+  .va-header{background:rgba(13,18,32,.94);backdrop-filter:blur(10px)}
+  .va-header-inner{
+    display:flex;align-items:center;gap:22px;height:66px;
+  }
+  .va-logo{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+  .va-logo-mark{
+    width:36px;height:36px;border-radius:10px;flex:0 0 auto;
+    background:linear-gradient(140deg,var(--va-neon),var(--va-accent));
+    display:grid;place-items:center;
+    box-shadow:0 0 18px rgba(0,224,168,.35);
+  }
+  .va-logo-mark svg{width:18px;height:18px}
+  .va-logo-txt{line-height:1.15}
+  .va-logo-name{font-size:17px;font-weight:800;letter-spacing:.02em}
+  .va-logo-sub{font-size:10px;color:var(--va-dim);letter-spacing:.18em;text-transform:uppercase}
+
+  .va-nav{display:flex;align-items:center;gap:4px;flex:1 1 auto;min-width:0;overflow-x:auto;scrollbar-width:none}
+  .va-nav::-webkit-scrollbar{display:none}
+  .va-nav a{
+    padding:8px 12px;border-radius:8px;font-size:14px;color:var(--va-muted);
+    transition:.2s;white-space:nowrap;
+  }
+  .va-nav a:hover{color:var(--va-text);background:#1a2440}
+
+  .va-head-tools{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+  .va-search{position:relative;display:flex;align-items:center}
+  .va-search input{
+    width:210px;height:38px;border-radius:999px;
+    background:#111a2c;border:1px solid var(--va-line);
+    color:var(--va-text);padding:0 40px 0 16px;font-size:13px;
+    outline:none;transition:.2s;
+  }
+  .va-search input::placeholder{color:var(--va-dim)}
+  .va-search input:focus{border-color:var(--va-neon);box-shadow:0 0 0 3px rgba(0,224,168,.12);width:240px}
+  .va-search-btn{
+    position:absolute;right:6px;top:50%;transform:translateY(-50%);
+    width:28px;height:28px;border-radius:50%;display:grid;place-items:center;
+    color:var(--va-muted);transition:.2s;
+  }
+  .va-search-btn:hover{color:var(--va-neon);background:#1b2742}
+  .va-search-feedback{
+    position:absolute;top:46px;right:0;width:260px;
+    background:#182239;border:1px solid var(--va-line2);border-radius:12px;
+    padding:10px 14px;font-size:12.5px;color:var(--va-muted);
+    box-shadow:0 18px 40px rgba(0,0,0,.5);display:none;
+  }
+  .va-search-feedback.on{display:block}
+  .va-search-feedback b{color:var(--va-neon2)}
+  .va-menu-toggle{
+    display:none;width:38px;height:38px;border-radius:10px;
+    background:#182239;border:1px solid var(--va-line);
+    place-items:center;
+  }
+  .va-menu-toggle span{display:block;width:16px;height:2px;background:var(--va-text);margin:3px auto;border-radius:2px;transition:.25s}
+  .va-menu-toggle.open span:nth-child(1){transform:translateY(5px) rotate(45deg)}
+  .va-menu-toggle.open span:nth-child(2){opacity:0}
+  .va-menu-toggle.open span:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
+
+  /* ============ 首屏 左文右侧大图 5:5 ============ */
+  .va-hero{padding:58px 0 46px;position:relative;overflow:hidden}
+  .va-hero::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(600px 300px at 82% 10%,rgba(0,224,168,.10),transparent 70%),
+      radial-gradient(500px 320px at 8% 90%,rgba(124,107,255,.12),transparent 70%);
+    pointer-events:none;
+  }
+  .va-hero-grid{
+    position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:48px;align-items:center;
+  }
+  .va-hero-eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:12px;letter-spacing:.14em;color:var(--va-neon2);
+    border:1px solid rgba(0,224,168,.35);border-radius:999px;
+    padding:5px 14px;margin-bottom:20px;background:rgba(0,224,168,.07);
+  }
+  .va-hero-eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--va-neon);box-shadow:0 0 8px var(--va-neon)}
+  .va-hero h1{
+    font-size:clamp(34px,4.4vw,54px);line-height:1.16;
+    font-weight:800;letter-spacing:-.01em;margin-bottom:8px;
+  }
+  .va-hero h1 em{
+    font-style:normal;
+    background:linear-gradient(100deg,var(--va-neon),#8ef7dc 55%,var(--va-accent));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .va-hero-slogan{font-size:15.5px;color:var(--va-muted);margin-bottom:18px}
+  .va-hero-intro{
+    font-size:14.5px;color:#a9b6d3;line-height:1.95;margin-bottom:24px;
+    border-left:2px solid var(--va-line2);padding-left:16px;
+  }
+  .va-hero-stats{
+    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:12px;margin-bottom:26px;
+  }
+  .va-stat{
+    background:linear-gradient(160deg,#151f36,#111a2c);
+    border:1px solid var(--va-line);border-radius:12px;padding:12px 14px;
+  }
+  .va-stat b{display:block;font-size:22px;font-weight:800;color:var(--va-neon2);line-height:1.2;letter-spacing:.01em}
+  .va-stat span{font-size:11.5px;color:var(--va-dim)}
+  .va-hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+  .va-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    height:44px;padding:0 22px;border-radius:999px;font-size:14px;font-weight:600;
+    transition:.22s;
+  }
+  .va-btn-primary{background:var(--va-neon);color:#05130f;box-shadow:0 6px 22px rgba(0,224,168,.3)}
+  .va-btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,224,168,.42)}
+  .va-btn-ghost{background:#182239;border:1px solid var(--va-line2);color:var(--va-text)}
+  .va-btn-ghost:hover{border-color:var(--va-neon);color:var(--va-neon2)}
+  .va-btn svg{width:15px;height:15px}
+
+  .va-hero-visual{position:relative}
+  .va-hero-frame{
+    position:relative;border-radius:22px;overflow:hidden;
+    border:1px solid var(--va-line2);
+    box-shadow:0 28px 70px rgba(0,0,0,.55);
+    background:#0a1020;
+  }
+  .va-hero-frame img{width:100%;height:auto;aspect-ratio:16/12;object-fit:cover}
+  .va-hero-play{
+    position:absolute;inset:0;margin:auto;width:78px;height:78px;border-radius:50%;
+    display:grid;place-items:center;
+    background:rgba(0,224,168,.92);color:#04120e;
+    box-shadow:0 0 0 10px rgba(0,224,168,.16),0 0 44px rgba(0,224,168,.5);
+    transition:.22s;
+  }
+  .va-hero-play:hover{transform:scale(1.06)}
+  .va-hero-play svg{width:26px;height:26px;margin-left:4px}
+  .va-hero-badge{
+    position:absolute;left:16px;top:16px;
+    background:rgba(8,14,26,.82);border:1px solid var(--va-line2);
+    border-radius:999px;font-size:11px;padding:5px 13px;color:var(--va-neon2);
+    letter-spacing:.06em;
+  }
+  .va-hero-cap{
+    position:absolute;left:0;right:0;bottom:0;
+    padding:52px 20px 16px;
+    background:linear-gradient(to top,rgba(5,9,18,.94),rgba(5,9,18,.35) 60%,transparent);
+  }
+  .va-hero-cap strong{display:block;font-size:15px;margin-bottom:3px}
+  .va-hero-cap span{font-size:12px;color:var(--va-muted)}
+  .va-hero-float{
+    position:absolute;right:-14px;bottom:-18px;
+    background:#141d31;border:1px solid var(--va-line2);border-radius:14px;
+    padding:12px 16px;font-size:12px;color:var(--va-muted);
+    box-shadow:0 16px 36px rgba(0,0,0,.5);
+  }
+  .va-hero-float b{display:block;color:var(--va-neon2);font-size:16px;font-weight:800}
+
+  /* ============ 通用 section ============ */
+  .va-section{padding:58px 0;border-top:1px solid rgba(38,51,80,.6)}
+  .va-sec-head{margin-bottom:34px;max-width:820px}
+  .va-sec-kicker{
+    font-size:12px;letter-spacing:.2em;color:var(--va-neon2);
+    text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:10px;
+  }
+  .va-sec-kicker::before{content:"";width:22px;height:1px;background:var(--va-neon)}
+  .va-sec-head h2{font-size:clamp(24px,2.8vw,32px);font-weight:800;line-height:1.3;letter-spacing:-.01em}
+  .va-sec-head p{color:var(--va-muted);font-size:14.5px;margin-top:12px}
+
+  /* ============ 焦点内容 + 视频流 ============ */
+  .va-focus-grid{display:grid;grid-template-columns:1.45fr 1fr;gap:26px;align-items:start}
+  .va-focus-main{
+    background:linear-gradient(165deg,#17223a,#111a2c);
+    border:1px solid var(--va-line);border-radius:var(--va-radius);
+    overflow:hidden;
+  }
+  .va-focus-main .va-cover{position:relative}
+  .va-focus-main img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+  .va-cover-tag{
+    position:absolute;left:14px;top:14px;
+    background:var(--va-accent);color:#fff;font-size:11px;font-weight:700;
+    padding:4px 11px;border-radius:6px;letter-spacing:.04em;
+  }
+  .va-cover-time{
+    position:absolute;right:12px;bottom:12px;background:rgba(4,8,16,.85);
+    font-size:11px;padding:3px 9px;border-radius:5px;color:#cdd8ef;
+  }
+  .va-focus-body{padding:20px 22px 22px}
+  .va-focus-body h3{font-size:20px;font-weight:700;line-height:1.45;margin-bottom:10px}
+  .va-focus-body p{font-size:14px;color:var(--va-muted);margin-bottom:16px}
+  .va-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px}
+  .va-tag{
+    font-size:11.5px;color:#a9c8ff;background:rgba(124,107,255,.14);
+    border:1px solid rgba(124,107,255,.3);border-radius:999px;padding:2px 10px;
+  }
+  .va-meta{
+    display:flex;align-items:center;flex-wrap:wrap;gap:14px;
+    font-size:12.5px;color:var(--va-dim);margin-bottom:16px;
+  }
+  .va-meta i{font-style:normal;display:inline-flex;align-items:center;gap:5px}
+  .va-meta svg{width:13px;height:13px}
+  .va-card-actions{display:flex;flex-wrap:wrap;gap:10px}
+  .va-act{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:12.5px;color:var(--va-muted);
+    background:#1a2440;border:1px solid var(--va-line);border-radius:999px;
+    padding:6px 13px;transition:.2s;
+  }
+  .va-act:hover{border-color:var(--va-neon);color:var(--va-neon2)}
+  .va-act.liked{background:rgba(0,224,168,.16);border-color:var(--va-neon);color:var(--va-neon2)}
+  .va-act.saved{background:rgba(255,182,72,.14);border-color:var(--va-warn);color:var(--va-warn)}
+  .va-act svg{width:13px;height:13px}
+
+  .va-focus-side{display:flex;flex-direction:column;gap:14px}
+  .va-side-item{
+    display:grid;grid-template-columns:96px minmax(0,1fr);gap:14px;
+    background:var(--va-card);border:1px solid var(--va-line);border-radius:12px;
+    padding:12px;transition:.22s;
+  }
+  .va-side-item:hover{border-color:var(--va-line2);transform:translateX(3px);background:var(--va-card2)}
+  .va-side-item .va-mini{position:relative;border-radius:8px;overflow:hidden}
+  .va-side-item img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover}
+  .va-side-item .va-mini span{
+    position:absolute;inset:auto 0 0 0;background:linear-gradient(to top,rgba(0,0,0,.85),transparent);
+    font-size:10.5px;color:#cfdaf1;padding:12px 7px 5px;
+  }
+  .va-side-item h4{font-size:14px;line-height:1.5;margin-bottom:6px;font-weight:600}
+  .va-side-item p{font-size:12px;color:var(--va-dim);line-height:1.6}
+
+  /* ============ 视频列表 ============ */
+  .va-video-list{margin-top:26px;display:flex;flex-direction:column;gap:0;border-top:1px solid var(--va-line)}
+  .va-video-row{
+    display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:center;
+    padding:18px 4px;border-bottom:1px solid rgba(38,51,80,.7);
+    transition:.2s;
+  }
+  .va-video-row:hover{background:rgba(28,39,64,.45)}
+  .va-video-row h4{font-size:15.5px;font-weight:600;margin-bottom:5px;line-height:1.55}
+  .va-video-row h4 span{color:var(--va-neon2);font-size:12px;margin-right:8px}
+  .va-video-row p{font-size:13px;color:var(--va-muted);margin-bottom:8px}
+  .va-row-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:7px}
+  .va-row-tags em{
+    font-style:normal;font-size:11px;color:var(--va-dim);
+    background:#141d31;border:1px solid var(--va-line);border-radius:5px;padding:1px 8px;
+  }
+  .va-row-meta{font-size:12px;color:var(--va-dim);display:flex;flex-wrap:wrap;gap:14px}
+  .va-row-actions{display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+
+  /* ============ 专题 ============ */
+  .va-topic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+  .va-topic{
+    background:linear-gradient(170deg,#17223a,#121a2c);
+    border:1px solid var(--va-line);border-radius:var(--va-radius);
+    padding:0 0 18px;overflow:hidden;display:flex;flex-direction:column;
+    transition:.22s;
+  }
+  .va-topic:hover{border-color:var(--va-neon);transform:translateY(-4px)}
+  .va-topic img{width:100%;height:auto;aspect-ratio:16/8;object-fit:cover}
+  .va-topic-body{padding:16px 18px 0}
+  .va-topic-status{
+    display:inline-block;font-size:11px;font-weight:600;
+    color:var(--va-neon);background:rgba(0,224,168,.12);
+    border-radius:5px;padding:2px 9px;margin-bottom:10px;
+  }
+  .va-topic-status.done{color:var(--va-muted);background:#1b2440}
+  .va-topic h3{font-size:17px;font-weight:700;margin-bottom:8px;line-height:1.5}
+  .va-topic > .va-topic-body > p{font-size:13px;color:var(--va-muted);margin-bottom:14px}
+  .va-topic ul{display:flex;flex-direction:column;gap:9px;padding:0 18px}
+  .va-topic li{
+    font-size:12.5px;color:#a9b6d3;display:flex;gap:8px;align-items:flex-start;
+    padding-top:9px;border-top:1px dashed rgba(51,67,104,.7);
+  }
+  .va-topic li::before{content:"▸";color:var(--va-accent);flex:0 0 auto;font-size:11px;line-height:1.9}
+
+  /* ============ 作者矩阵 双列简介 ============ */
+  .va-author-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+  .va-author{
+    display:grid;grid-template-columns:64px minmax(0,1fr);gap:16px;
+    background:var(--va-card);border:1px solid var(--va-line);border-radius:var(--va-radius);
+    padding:20px;transition:.22s;
+  }
+  .va-author:hover{border-color:var(--va-line2);box-shadow:0 16px 36px rgba(0,0,0,.35)}
+  .va-avatar{
+    width:64px;height:64px;border-radius:50%;overflow:hidden;flex:0 0 auto;
+    display:grid;place-items:center;font-weight:800;font-size:22px;color:#04120e;
+  }
+  .va-author-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:4px}
+  .va-author-top h3{font-size:16px;font-weight:700}
+  .va-author-role{font-size:11px;color:var(--va-neon2);border:1px solid rgba(0,224,168,.3);border-radius:5px;padding:1px 8px}
+  .va-author-foot{display:flex;flex-wrap:wrap;gap:12px;font-size:11.5px;color:var(--va-dim);margin:8px 0}
+  .va-author-foot b{color:var(--va-text);font-weight:600}
+  .va-author p{font-size:12.5px;color:var(--va-muted);line-height:1.75}
+  .va-author-more{
+    margin-top:10px;font-size:12px;color:var(--va-neon2);
+    display:inline-flex;align-items:center;gap:5px;
+  }
+  .va-author-more:hover{text-decoration:underline}
+
+  /* ============ 关键词解析长文 ============ */
+  .va-deep{background:linear-gradient(180deg,#101828,#0d1220)}
+  .va-deep-inner{
+    display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:start;
+  }
+  .va-deep-article h3{font-size:18px;font-weight:700;margin:28px 0 12px;color:#dbe4f6}
+  .va-deep-article h3:first-child{margin-top:0}
+  .va-deep-article p{font-size:14.5px;color:#a9b6d3;line-height:2;margin-bottom:14px}
+  .va-deep-article strong{color:var(--va-neon2);font-weight:600}
+  .va-deep-side{
+    position:sticky;top:150px;display:flex;flex-direction:column;gap:16px;
+  }
+  .va-aside-card{
+    background:var(--va-card);border:1px solid var(--va-line);border-radius:14px;padding:18px;
+  }
+  .va-aside-card h4{font-size:14px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .va-aside-card h4::before{content:"";width:3px;height:14px;background:var(--va-neon);border-radius:2px}
+  .va-aside-card li{
+    font-size:12.5px;color:var(--va-muted);padding:8px 0;border-bottom:1px dashed rgba(51,67,104,.6);
+    display:flex;justify-content:space-between;gap:10px;
+  }
+  .va-aside-card li:last-child{border-bottom:none}
+  .va-aside-card li b{color:var(--va-neon2);font-weight:700}
+
+  /* ============ 评论 双列短评 ============ */
+  .va-comments-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+  .va-comment{
+    background:var(--va-card);border:1px solid var(--va-line);border-radius:14px;
+    padding:18px 18px 16px;position:relative;
+  }
+  .va-comment:nth-child(4n+1){background:linear-gradient(160deg,#182images,#151f36)}
+  .va-comment-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+  .va-comment-avatar{
+    width:34px;height:34px;border-radius:50%;flex:0 0 auto;
+    display:grid;place-items:center;font-size:13px;font-weight:700;color:#04120e;
+  }
+  .va-comment-head strong{font-size:13.5px}
+  .va-comment-head span{font-size:11px;color:var(--va-dim)}
+  .va-comment p{font-size:13px;color:#b3c0da;line-height:1.8}
+  .va-comment-foot{display:flex;gap:14px;margin-top:12px;font-size:11.5px;color:var(--va-dim)}
+  .va-comment-foot b{color:var(--va-neon2)}
+  .va-score{
+    display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+    background:linear-gradient(120deg,#16233c,#121a2c);
+    border:1px solid var(--va-line2);border-radius:14px;padding:18px 22px;margin-bottom:24px;
+  }
+  .va-score-num{font-size:38px;font-weight:800;color:var(--va-neon2);line-height:1}
+  .va-score-txt{font-size:12.5px;color:var(--va-muted)}
+  .va-score-bars{display:flex;flex-direction:column;gap:6px;flex:1;min-width:200px}
+  .va-score-bar{display:flex;align-items:center;gap:10px;font-size:11.5px;color:var(--va-dim)}
+  .va-score-bar i{display:block;height:6px;border-radius:4px;background:linear-gradient(90deg,var(--va-neon),var(--va-accent))}
+
+  /* ============ 品牌动态 / FAQ / 合作 ============ */
+  .va-two-col{display:grid;grid-template-columns:1.25fr 1fr;gap:44px;align-items:start}
+  .va-news-list{display:flex;flex-direction:column;gap:14px}
+  .va-news{
+    display:grid;grid-template-columns:86px minmax(0,1fr);gap:16px;
+    padding:14px 0;border-bottom:1px dashed rgba(51,67,104,.7);
+  }
+  .va-news-date{
+    font-size:12px;color:var(--va-neon2);font-weight:700;letter-spacing:.02em;
+    background:#141d31;border:1px solid var(--va-line);border-radius:8px;
+    display:flex;flex-direction:column;justify-content:center;align-items:center;padding:8px 0;
+  }
+  .va-news-date em{font-style:normal;font-size:10px;color:var(--va-dim);font-weight:400}
+  .va-news h3{font-size:15px;font-weight:600;margin-bottom:6px}
+  .va-news p{font-size:12.5px;color:var(--va-muted)}
+
+  .va-faq details{
+    border:1px solid var(--va-line);border-radius:12px;background:var(--va-card);
+    margin-bottom:10px;overflow:hidden;
+  }
+  .va-faq summary{
+    padding:14px 18px;font-size:14px;font-weight:600;cursor:pointer;
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+    list-style:none;
+  }
+  .va-faq summary::-webkit-details-marker{display:none}
+  .va-faq summary::after{content:"+";color:var(--va-neon);font-size:18px;font-weight:400;flex:0 0 auto;transition:.2s}
+  .va-faq details[open] summary::after{transform:rotate(45deg)}
+  .va-faq details[open] summary{color:var(--va-neon2)}
+  .va-faq p{padding:0 18px 16px;font-size:13px;color:var(--va-muted);line-height:1.85}
+
+  /* ============ 合作墙 ============ */
+  .va-partners{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+  .va-partner{
+    background:var(--va-card);border:1px solid var(--va-line);border-radius:12px;
+    padding:20px 14px;text-align:center;transition:.22s;
+  }
+  .va-partner:hover{border-color:var(--va-neon);background:var(--va-card2)}
+  .va-partner b{display:block;font-size:15px;font-weight:700;color:#dce5f7;margin-bottom:5px}
+  .va-partner span{font-size:11.5px;color:var(--va-dim)}
+
+  /* ============ 投稿 / 页脚 ============ */
+  .va-cta-band{
+    margin:0 24px;max-width:1152px;margin-left:auto;margin-right:auto;
+    background:linear-gradient(120deg,rgba(0,224,168,.14),rgba(124,107,255,.16));
+    border:1px solid var(--va-line2);border-radius:20px;
+    padding:38px 40px;display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap;
+  }
+  .va-cta-band h2{font-size:clamp(20px,2.4vw,27px);font-weight:800;margin-bottom:8px}
+  .va-cta-band p{font-size:13.5px;color:var(--va-muted)}
+
+  .va-footer{border-top:1px solid var(--va-line);margin-top:58px;padding:46px 0 0;background:#0a0f1b}
+  .va-footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:34px;padding-bottom:36px}
+  .va-footer h4{font-size:13px;font-weight:700;letter-spacing:.08em;margin-bottom:14px;color:#cfd9ee}
+  .va-footer li{font-size:12.5px;color:var(--va-dim);padding:5px 0;transition:.2s}
+  .va-footer li a:hover{color:var(--va-neon2)}
+  .va-footer-brand p{font-size:12.5px;color:var(--va-dim);line-height:1.9;margin-top:12px;max-width:340px}
+  .va-footer-bottom{
+    border-top:1px solid rgba(38,51,80,.7);padding:18px 0 26px;
+    display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+    font-size:12px;color:#5c6a89;
+  }
+
+  /* ============ 回到顶部 / Toast / Modal ============ */
+  .va-to-top{
+    position:fixed;right:22px;bottom:26px;z-index:90;
+    width:44px;height:44px;border-radius:50%;
+    background:var(--va-neon);color:#04120e;display:grid;place-items:center;
+    box-shadow:0 10px 26px rgba(0,224,168,.36);
+    opacity:0;pointer-events:none;transform:translateY(12px);transition:.26s;
+  }
+  .va-to-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+  .va-to-top svg{width:18px;height:18px}
+
+  .va-toast{
+    position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);
+    background:#1a2540;border:1px solid var(--va-neon);color:#dff7ef;
+    font-size:13px;padding:11px 22px;border-radius:999px;z-index:200;
+    opacity:0;pointer-events:none;transition:.28s;box-shadow:0 12px 32px rgba(0,0,0,.5);
+  }
+  .va-toast.show{opacity:1;transform:translate(-50%,0)}
+
+  .va-modal{
+    position:fixed;inset:0;z-index:180;display:none;
+    background:rgba(4,8,16,.78);backdrop-filter:blur(4px);
+    padding:24px;overflow-y:auto;
+  }
+  .va-modal.on{display:flex;align-items:flex-start;justify-content:center}
+  .va-modal-box{
+    background:#151f36;border:1px solid var(--va-line2);border-radius:18px;
+    max-width:560px;width:100%;margin-top:60px;padding:26px 26px 24px;
+    box-shadow:0 30px 80px rgba(0,0,0,.6);
+  }
+  .va-modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:16px}
+  .va-modal-head h3{font-size:19px;font-weight:700}
+  .va-modal-close{
+    width:32px;height:32px;border-radius:8px;background:#1e2a46;display:grid;place-items:center;
+    color:var(--va-muted);flex:0 0 auto;
+  }
+  .va-modal-close:hover{color:var(--va-text)}
+  .va-modal p{font-size:13.5px;color:var(--va-muted);line-height:1.9}
+  .va-modal label{display:block;font-size:12.5px;color:var(--va-muted);margin:14px 0 6px}
+  .va-modal input,.va-modal textarea,.va-modal select{
+    width:100%;background:#101a2c;border:1px solid var(--va-line2);border-radius:10px;
+    color:var(--va-text);padding:10px 13px;font-size:13px;font-family:inherit;outline:none;
+  }
+  .va-modal input:focus,.va-modal textarea:focus,.va-modal select:focus{border-color:var(--va-neon)}
+  .va-modal textarea{resize:vertical;min-height:88px}
+  .va-share-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+  .va-share-chip{
+    font-size:12.5px;border:1px solid var(--va-line2);border-radius:999px;padding:7px 16px;
+    color:#b5c2dc;background:#182239;transition:.2s;
+  }
+  .va-share-chip:hover{border-color:var(--va-neon);color:var(--va-neon2)}
+  .va-modal .va-btn{margin-top:18px}
+
+  /* ============ 响应式 ============ */
+  @media (max-width:1024px){
+    .va-hero-grid{grid-template-columns:minmax(0,1fr);gap:34px}
+    .va-focus-grid{grid-template-columns:minmax(0,1fr)}
+    .va-topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .va-deep-inner{grid-template-columns:minmax(0,1fr)}
+    .va-deep-side{position:static}
+    .va-two-col{grid-template-columns:minmax(0,1fr);gap:34px}
+    .va-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .va-partners{grid-template-columns:repeat(2,minmax(0,1fr))}
+  }
+  @media (max-width:860px){
+    .va-nav{
+      display:none;position:absolute;left:0;right:0;top:100%;
+      background:#0f1728;border-bottom:1px solid var(--va-line);
+      flex-direction:column;align-items:stretch;padding:10px 24px 18px;gap:2px;
+    }
+    .va-nav.open{display:flex}
+    .va-header-inner{position:relative;flex-wrap:wrap;height:auto;padding:12px 0}
+    .va-menu-toggle{display:grid}
+    .va-search input{width:150px}
+    .va-search input:focus{width:170px}
+    .va-head-tools{margin-left:auto}
+    .va-author-grid,.va-comments-grid{grid-template-columns:minmax(0,1fr)}
+    .va-topic-grid{grid-template-columns:minmax(0,1fr)}
+    .va-cta-band{padding:28px 24px}
+  }
+  @media (max-width:560px){
+    .va-wrap{padding:0 16px}
+    .va-hero{padding:36px 0}
+    .va-hero-stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+    .va-stat{padding:10px}
+    .va-stat b{font-size:17px}
+    .va-video-row{grid-template-columns:minmax(0,1fr)}
+    .va-row-actions{flex-direction:row;justify-content:flex-start}
+    .va-news{grid-template-columns:66px minmax(0,1fr)}
+    .va-footer-grid{grid-template-columns:minmax(0,1fr)}
+    .va-partners{grid-template-columns:minmax(0,1fr)}
+    .va-hero-float{display:none}
+    .va-search input{width:120px}
+    .va-search input:focus{width:130px}
+    .va-author{grid-template-columns:48px minmax(0,1fr)}
+    .va-avatar{width:48px;height:48px;font-size:17px}
+  }
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="va-topbar">
+  <div class="va-announce">
+    <div class="va-wrap">
+      <div class="va-announce-inner">
+        <span class="va-announce-tag">最新公告</span>
+        <span class="va-announce-item"><b>11月20日</b> 先锋va资源网「2026 冬季创作挑战赛」正式开放报名，投稿通道同步开启</span>
+        <span class="va-announce-sep">/</span>
+        <span class="va-announce-item"><b>11月18日</b> 资源库上线「高清母带下载」专区，支持原创作者授权分发</span>
+        <span class="va-announce-sep">/</span>
+        <span class="va-announce-item"><b>11月15日</b> 创作者扶持计划第三期公布，18 位新锐作者入选</span>
+        <span class="va-announce-sep">/</span>
+        <span class="va-announce-item"><b>11月12日</b> 平台搜索与标签筛选功能完成升级，支持多维组合检索</span>
+      </div>
+    </div>
+  </div>
+
+  <header class="va-header">
+    <div class="va-wrap">
+      <div class="va-header-inner">
+        <a class="va-logo" href="#va-hero" aria-label="先锋va资源网首页">
+          <span class="va-logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="#05130f"><path d="M6 3l14 9-14 9z"/></svg>
+          </span>
+          <span class="va-logo-txt">
+            <span class="va-logo-name">先锋va资源网</span>
+            <span class="va-logo-sub">Va Resource Studio</span>
+          </span>
+        </a>
+
+        <nav class="va-nav" id="vaNav" aria-label="主导航">
+          <a href="#va-hero">首页</a>
+          <a href="#va-videos">视频资源</a>
+          <a href="#va-topics">专题企划</a>
+          <a href="#va-authors">创作者</a>
+          <a href="#va-about">关键词解析</a>
+          <a href="#va-comments">口碑评价</a>
+          <a href="#va-news">企业动态</a>
+          <a href="#va-faq">帮助中心</a>
+        </nav>
+
+        <div class="va-head-tools">
+          <div class="va-search">
+            <input type="search" id="vaSearchInput" placeholder="搜索资源、教程、创作者" aria-label="站内搜索">
+            <button class="va-search-btn" id="vaSearchBtn" aria-label="执行搜索">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+            </button>
+            <div class="va-search-feedback" id="vaSearchFeedback" role="status"></div>
+          </div>
+          <button class="va-menu-toggle" id="vaMenuToggle" aria-label="展开导航菜单" aria-expanded="false" aria-controls="vaNav">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main>
+
+  <!-- ========== S2 首屏 ========== -->
+  <section class="va-hero va-anchor-offset" id="va-hero">
+    <div class="va-wrap">
+      <div class="va-hero-grid">
+        <div class="va-hero-copy">
+          <span class="va-hero-eyebrow"><i></i>官方网站 · 原创高清视频资源平台</span>
+          <h1>先锋<em>va资源网</em></h1>
+          <p class="va-hero-slogan">让每一份创作资源，都被正版与专业对待</p>
+          <p class="va-hero-intro">
+            先锋va资源网是面向视频创作者与企业内容团队的专业资源平台，官方网站提供原创高清素材、教程干货与行业观察，深耕视频资源垂直领域，以品质内容生态连接创作者与观众。我们坚持正版授权、持续运营，用真实的影像与可复用的资源，陪伴每一位创作者成长。
+          </p>
+          <div class="va-hero-stats">
+            <div class="va-stat"><b data-va-count="12600">12,600+</b><span>原创高清视频资源</span></div>
+            <div class="va-stat"><b data-va-count="860">860+</b><span>签约入驻创作者</span></div>
+            <div class="va-stat"><b data-va-count="98">98%</b><span>用户口碑好评率</span></div>
+          </div>
+          <div class="va-hero-actions">
+            <a class="va-btn va-btn-primary" href="#va-videos">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l11 7-11 7z"/></svg>
+              浏览视频资源
+            </a>
+            <button class="va-btn va-btn-ghost" data-va-modal="submit">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+              我要投稿
+            </button>
+            <button class="va-btn va-btn-ghost" data-va-modal="share">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 10.6l6.8-3.9M8.6 13.4l6.8 3.9"/></svg>
+              分享官网
+            </button>
+          </div>
+        </div>
+
+        <div class="va-hero-visual">
+          <div class="va-hero-frame">
+            <span class="va-hero-badge">本期焦点 · 官方发布</span>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230a1a2e'/%3E%3Cstop offset='1' stop-color='%231a1038'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%2300e0a8'/%3E%3Cstop offset='1' stop-color='%237c6bff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='480' fill='url(%23a)'/%3E%3Cg opacity='.5'%3E%3Ccircle cx='120' cy='90' r='120' fill='%237c6bff' opacity='.2'/%3E%3Ccircle cx='540' cy='380' r='150' fill='%2300e0a8' opacity='.16'/%3E%3C/g%3E%3Cg stroke='%232c3d62' stroke-width='1'%3E%3Cpath d='M0 120h640M0 240h640M0 360h640'/%3E%3Cpath d='M160 0v480M320 0v480M480 0v480'/%3E%3C/g%3E%3Cg%3E%3Crect x='70' y='96' width='300' height='180' rx='14' fill='%23162440' stroke='%23334468'/%3E%3Crect x='86' y='112' width='268' height='112' rx='8' fill='%23091content' opacity='.6'/%3E%3Crect x='86' y='112' width='268' height='112' rx='8' fill='%23102030'/%3E%3Cpath d='M190 138l56 30-56 30z' fill='url(%23b)'/%3E%3Crect x='86' y='238' width='160' height='10' rx='5' fill='%23334468'/%3E%3Crect x='86' y='258' width='110' height='8' rx='4' fill='%232c3d62'/%3E%3Crect x='396' y='140' width='190' height='120' rx='14' fill='%231f2d4d' stroke='%23334468'/%3E%3Crect x='414' y='160' width='56' height='56' rx='28' fill='url(%23b)'/%3E%3Crect x='486' y='166' width='82' height='10' rx='5' fill='%23a9b6d3' opacity='.7'/%3E%3Crect x='486' y='188' width='56' height='8' rx='4' fill='%23334468'/%3E%3Crect x='414' y='230' width='120' height='8' rx='4' fill='%232c3d62'/%3E%3Cpolyline points='70,404 140,352 210,376 280,318 350,346 420,296 490,322 560,270' fill='none' stroke='url(%23b)' stroke-width='3'/%3E%3C/g%3E%3C/svg%3E" width="640" height="480" alt="先锋va资源网官方发布焦点视频主视觉：视频创作者资源界面与数据曲线">
+            <button class="va-hero-play" data-va-modal="author" aria-label="播放本期焦点视频介绍">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l11 7-11 7z"/></svg>
+            </button>
+            <div class="va-hero-cap">
+              <strong>《资源管理者的日常：一年 800 条原创素材背后》</strong>
+              <span>官方出品 · 高清正版 · 片长 18:42</span>
+            </div>
+          </div>
+          <div class="va-hero-float">
+            <b>2026 冬季创作挑战赛</b>
+            报名进行中 · 已收稿 1,264 件
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== S3 焦点内容 + 视频流 ========== -->
+  <section class="va-section va-anchor-offset" id="va-videos">
+    <div class="va-wrap">
+      <div class="va-sec-head">
+        <span class="va-sec-kicker">Focus &amp; Feed</span>
+        <h2>焦点资源与热门视频，看见先锋va资源网的精品内容</h2>
+        <p>由官方编辑团队与社区创作者共同筛选，聚焦教程干货、深度测评与创作幕后，全部为平台原创或正版授权内容。</p>
+      </div>
+
+      <div class="va-focus-grid">
+        <article class="va-focus-main">
+          <div class="va-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Cdefs%3E%3ClinearGradient id='c' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23151f36'/%3E%3Cstop offset='1' stop-color='%23231840'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='450' fill='url(%23c)'/%3E%3Cg opacity='.55'%3E%3Cpath d='M0 380 Q200 300 400 360 T800 320 L800 450 L0 450z' fill='%2300e0a8' opacity='.15'/%3E%3C/g%3E%3Cg%3E%3Crect x='56' y='60' width='300' height='40' rx='8' fill='%2300e0a8' opacity='.85'/%3E%3Crect x='56' y='120' width='220' height='14' rx='7' fill='%23a9b6d3' opacity='.55'/%3E%3Crect x='56' y='148' width='260' height='14' rx='7' fill='%23334468'/%3E%3Crect x='56' y='186' width='180' height='10' rx='5' fill='%232c3d62'/%3E%3Cg transform='translate(470,80)'%3E%3Crect width='270' height='190' rx='16' fill='%231b2744' stroke='%23334468' stroke-width='2'/%3E%3Crect x='22' y='24' width='226' height='90' rx='8' fill='%230f1728'/%3E%3Ccircle cx='135' cy='69' r='22' fill='%2300e0a8' opacity='.9'/%3E%3Cpath d='M128 58l16 11-16 11z' fill='%23051b15'/%3E%3Crect x='22' y='132' width='140' height='12' rx='6' fill='%23334468'/%3E%3Crect x='22' y='156' width='90' height='9' rx='4' fill='%232c3d62'/%3E%3C/g%3E%3Crect x='56' y='290' width='360' height='90' rx='12' fill='%231b2744' stroke='%23334468'/%3E%3Crect x='76' y='312' width='60' height='46' rx='6' fill='%237c6bff' opacity='.6'/%3E%3Crect x='150' y='316' width='180' height='12' rx='6' fill='%23a9b6d3' opacity='.5'/%3E%3Crect x='150' y='340' width='120' height='9' rx='4' fill='%23334468'/%3E%3C/g%3E%3C/svg%3E" width="800" height="450" alt="深度教程视频封面：从素材库到成片的高清视频资源工作流展示">
+            <span class="va-cover-tag">编辑精选</span>
+            <span class="va-cover-time">22:16</span>
+          </div>
+          <div class="va-focus-body">
+            <h3>从素材库到成片：一套可复用的高清视频资源工作流</h3>
+            <p>本期重点资源带你走完一条完整的生产链路：素材分类、版本管理、授权确认、剪辑套模板与导出参数设置。所有环节均基于先锋va资源网官方资源库演示，适合独立创作者与小型内容团队直接套用。</p>
+            <div class="va-tags">
+              <span class="va-tag">教程干货</span>
+              <span class="va-tag">创作幕后</span>
+              <span class="va-tag">资源管理</span>
+            </div>
+            <div class="va-meta">
+              <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg> 28.6 万播放</i>
+              <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0112 5a5.5 5.5 0 019.3 7c-2.3 4.4-9.3 9-9.3 9z"/></svg> 1.9 万点赞</i>
+              <i>收藏 6,482</i>
+              <i>作者：资源编辑组</i>
+            </div>
+            <div class="va-card-actions">
+              <button class="va-act" data-va-like><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0112 5a5.5 5.5 0 019.3 7c-2.3 4.4-9.3 9-9.3 9z"/></svg><span>点赞</span></button>
+              <button class="va-act" data-va-save><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg><span>收藏</span></button>
+              <button class="va-act" data-va-copy>复制链接</button>
+              <button class="va-act" data-va-modal="share">分享</button>
+            </div>
+          </div>
+        </article>
+
+        <div class="va-focus-side">
+          <article class="va-side-item">
+            <div class="va-mini">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 150'%3E%3Crect width='200' height='150' fill='%23131c30'/%3E%3Cg stroke='%2300e0a8' stroke-width='2' fill='none'%3E%3Ccircle cx='100' cy='70' r='34' opacity='.8'/%3E%3Ccircle cx='100' cy='70' r='52' opacity='.3'/%3E%3C/g%3E%3Crect x='40' y='118' width='120' height='9' rx='4' fill='%23334468'/%3E%3C/svg%3E" width="200" height="150" alt="资源检索教程缩略图：圆形检索雷达与条目示意">
+              <span>14:08</span>
+            </div>
+            <div>
+              <h4>资源检索进阶：用三维标签精确命中素材</h4>
+              <p>分类、分辨率、授权范围三个维度组合筛选，效率提升 3 倍。</p>
+            </div>
+          </article>
+
+          <article class="va-side-item">
+            <div class="va-mini">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 150'%3E%3Crect width='200' height='150' fill='%231a1730'/%3E%3Cg fill='%237c6bff'%3E%3Crect x='30' y='86' width='22' height='40' rx='4' opacity='.5'/%3E%3Crect x='62' y='64' width='22' height='62' rx='4' opacity='.7'/%3E%3Crect x='94' y='44' width='22' height='82' rx='4' opacity='.85'/%3E%3Crect x='126' y='74' width='22' height='52' rx='4' opacity='.6'/%3E%3Crect x='158' y='54' width='22' height='72' rx='4' opacity='.75'/%3E%3C/g%3E%3C/svg%3E" width="200" height="150" alt="数据测评视频缩略图：五列数据柱状结构与对比">
+              <span>09:54</span>
+            </div>
+            <div>
+              <h4>四款主流剪辑软件导出质量实测对比</h4>
+              <p>同源素材、同等码率，逐帧比对压缩损失与色彩偏差。</p>
+            </div>
+          </article>
+
+          <article class="va-side-item">
+            <div class="va-mini">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 150'%3E%3Crect width='200' height='150' fill='%230f1e1c'/%3E%3Cg fill='none' stroke='%2300e0a8' stroke-width='2'%3E%3Cpath d='M24 108 L60 70 L96 88 L132 46 L176 62'/%3E%3C/g%3E%3Ccircle cx='132' cy='46' r='5' fill='%2300e0a8'/%3E%3Ccircle cx='176' cy='62' r='5' fill='%237c6bff'/%3E%3Crect x='24' y='124' width='90' height='8' rx='4' fill='%232c3d62'/%3E%3C/svg%3E" width="200" height="150" alt="创作者访谈缩略图：上升曲线与节点标记">
+              <span>17:33</span>
+            </div>
+            <div>
+              <h4>访谈：一个三人小队如何稳定月更 40 条</h4>
+              <p>选题会、素材排期与复盘机制，全部流程公开。</p>
+            </div>
+          </article>
+
+          <article class="va-side-item">
+            <div class="va-mini">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 150'%3E%3Crect width='200' height='150' fill='%23141c2e'/%3E%3Cg fill='%23ffb648' opacity='.8'%3E%3Ccircle cx='56' cy='60' r='16'/%3E%3C/g%3E%3Cg fill='none' stroke='%23334468' stroke-width='2'%3E%3Crect x='88' y='44' width='82' height='14' rx='7'/%3E%3Crect x='88' y='70' width='58' height='14' rx='7'/%3E%3Crect x='40' y='96' width='130' height='10' rx='5'/%3E%3C/g%3E%3C/svg%3E" width="200" height="150" alt="正版授权说明缩略图：图标与条款线条示意">
+              <span>06:21</span>
+            </div>
+            <div>
+              <h4>正版授权入门：商用素材到底怎么用</h4>
+              <p>授权范围、署名要求、二次分发边界，一次讲清。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="va-video-list">
+        <article class="va-video-row">
+          <div>
+            <h4><span>01</span>原创高清素材的色彩管理：从拍摄到交付的 7 个节点</h4>
+            <p>用一台机器完成全流程色彩统一，附赠 LUT 参数与项目工程结构说明，适合接商业单的独立创作者。</p>
+            <div class="va-row-tags"><em>教程干货</em><em>高清</em><em>实用技巧</em></div>
+            <div class="va-row-meta"><span>16.2 万播放</span><span>8,140 点赞</span><span>作者：阿骆的调色台</span></div>
+          </div>
+          <div class="va-row-actions">
+            <button class="va-act" data-va-like>点赞</button>
+            <button class="va-act" data-va-save>收藏</button>
+          </div>
+        </article>
+
+        <article class="va-video-row">
+          <div>
+            <h4><span>02</span>测评：三款免费录屏工具在 4K 下的真实表现</h4>
+            <p>同机同场景，逐一记录帧率抖动、音画同步与文件体积，结论不吹不黑，附带对比表格。</p>
+            <div class="va-row-tags"><em>深度测评</em><em>工具</em><em>数据</em></div>
+            <div class="va-row-meta"><span>11.7 万播放</span><span>5,266 点赞</span><span>作者：测一测工作室</span></div>
+          </div>
+          <div class="va-row-actions">
+            <button class="va-act" data-va-like>点赞</button>
+            <button class="va-act" data-va-save>收藏</button>
+          </div>
+        </article>
+
+        <article class="va-video-row">
+          <div>
+            <h4><span>03</span>创作者的一天：在资源库里找灵感的三小时</h4>
+            <p>记录一个真实选题从灵感到成稿的过程，包含被否决的四个方案与最后确定选题的理由。</p>
+            <div class="va-row-tags"><em>日常记录</em><em>创作幕后</em></div>
+            <div class="va-row-meta"><span>9.4 万播放</span><span>4,032 点赞</span><span>作者：迟野</span></div>
+          </div>
+          <div class="va-row-actions">
+            <button class="va-act" data-va-like>点赞</button>
+            <button class="va-act" data-va-save>收藏</button>
+          </div>
+        </article>
+
+        <article class="va-video-row">
+          <div>
+            <h4><span>04</span>行业观察：视频资源平台正在发生的三个变化</h4>
+            <p>授权透明化、素材标签化、创作者分账机制，结合公开数据谈趋势，附带从业者访谈片段。</p>
+            <div class="va-row-tags"><em>行业观察</em><em>访谈</em><em>趋势</em></div>
+            <div class="va-row-meta"><span>7.8 万播放</span><span>3,518 点赞</span><span>作者：陆沉观察</span></div>
+          </div>
+          <div class="va-row-actions">
+            <button class="va-act" data-va-like>点赞</button>
+            <button class="va-act" data-va-save>收藏</button>
+          </div>
+        </article>
+
+        <article class="va-video-row">
+          <div>
+            <h4><span>05</span>剪辑思路拆解：一支 60 秒片子的节奏怎么设计</h4>
+            <p>从分镜脚本到节拍卡点，逐段标注镜头时长与转场原因，可直接作为练习作业模板。</p>
+            <div class="va-row-tags"><em>剪辑思路</em><em>教程干货</em></div>
+            <div class="va-row-meta"><span>13.5 万播放</span><span>6,927 点赞</span><span>作者：剪风工作室</span></div>
+          </div>
+          <div class="va-row-actions">
+            <button class="va-act" data-va-like>点赞</button>
+            <button class="va-act" data-va-save>收藏</button>
+          </div>
+        </article>
+
+        <article class="va-video-row">
+          <div>
+            <h4><span>06</span>城市探索影像：用一支短片记录老城区的黄昏</h4>
+            <p>低预算设备、自然光、人声环境同期录制，成片与拍摄手记一并公开，适合记录类创作者参考。</p>
+            <div class="va-row-tags"><em>城市探索</em><em>在地文化</em><em>治愈影像</em></div>
+            <div class="va-row-meta"><span>10.1 万播放</span><span>4,688 点赞</span><span>作者：南岸记录</span></div>
+          </div>
+          <div class="va-row-actions">
+            <button class="va-act" data-va-like>点赞</button>
+            <button class="va-act" data-va-save>收藏</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== S4 专题企划 ========== -->
+  <section class="va-section va-anchor-offset" id="va-topics">
+    <div class="va-wrap">
+      <div class="va-sec-head">
+        <span class="va-sec-kicker">Special Projects</span>
+        <h2>专题企划：先锋va资源网持续运营的深度内容栏目</h2>
+        <p>每个专题由平台策划发起，联合创作者共同完成，从素材、教程到成片形成完整闭环，体现品牌在垂直领域的专业积累。</p>
+      </div>
+
+      <div class="va-topic-grid">
+        <article class="va-topic">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 240'%3E%3Crect width='480' height='240' fill='%23162038'/%3E%3Cg fill='none' stroke='%2300e0a8' stroke-width='2' opacity='.8'%3E%3Cpath d='M40 190 L120 120 L200 150 L280 80 L360 110 L440 50'/%3E%3C/g%3E%3Cg fill='%237c6bff' opacity='.55'%3E%3Crect x='60' y='30' width='70' height='30' rx='6'/%3E%3Crect x='150' y='30' width='110' height='30' rx='6'/%3E%3C/g%3E%3Cg fill='%2300e0a8'%3E%3Ccircle cx='280' cy='80' r='5'/%3E%3Ccircle cx='440' cy='50' r='5'/%3E%3C/g%3E%3C/svg%3E" width="480" height="240" alt="冬季创作挑战赛专题封面：上升路径与节点标记">
+          <div class="va-topic-body">
+            <span class="va-topic-status">报名进行中</span>
+            <h3>2026 冬季创作挑战赛</h3>
+            <p>面向所有注册创作者开放，鼓励使用平台正版素材完成一支 3 分钟以内的原创短片，评审团由编辑组与资深作者共同组成。</p>
+          </div>
+          <ul>
+            <li>报名与投稿：11 月 20 日至 12 月 25 日</li>
+            <li>赛道设置：纪实、教程、实验影像三个方向</li>
+            <li>奖励机制：资源库年度会员与官方推荐位</li>
+          </ul>
+        </article>
+
+        <article class="va-topic">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 240'%3E%3Crect width='480' height='240' fill='%231c1830'/%3E%3Cg fill='%23ffb648' opacity='.82'%3E%3Ccircle cx='110' cy='80' r='22'/%3E%3Ccircle cx='200' cy='130' r='16'/%3E%3Ccircle cx='300' cy='70' r='18'/%3E%3Ccircle cx='380' cy='140' r='24'/%3E%3C/g%3E%3Cg stroke='%23334468' stroke-width='2'%3E%3Cpath d='M0 200h480'/%3E%3C/g%3E%3Cg fill='%23a9b6d3' opacity='.5'%3E%3Crect x='60' y='210' width='130' height='9' rx='4'/%3E%3Crect x='220' y='210' width='90' height='9' rx='4'/%3E%3C/g%3E%3C/svg%3E" width="480" height="240" alt="正版素材手册专题封面：圆形素材点与地线组合">
+          <div class="va-topic-body">
+            <span class="va-topic-status">连载更新</span>
+            <h3>正版素材使用手册</h3>
+            <p>系统梳理授权类型、署名规则与商用边界，帮助创作者避免版权风险，是平台社会责任与专业度的长期体现。</p>
+          </div>
+          <ul>
+            <li>第一讲：授权范围的三种常见误区</li>
+            <li>第二讲：二次创作与转授权的边界</li>
+            <li>第三讲：企业客户的合规采购流程</li>
+          </ul>
+        </article>
+
+        <article class="va-topic">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 240'%3E%3Crect width='480' height='240' fill='%23111d1b'/%3E%3Cg fill='none' stroke='%2300e0a8' stroke-width='2' opacity='.7'%3E%3Crect x='70' y='60' width='150' height='100' rx='10'/%3E%3Crect x='260' y='90' width='150' height='100' rx='10'/%3E%3C/g%3E%3Cg fill='%23a9b6d3' opacity='.45'%3E%3Crect x='88' y='82' width='100' height='10' rx='5'/%3E%3Crect x='278' y='112' width='90' height='10' rx='5'/%3E%3C/g%3E%3Cg fill='%237c6bff' opacity='.7'%3E%3Ccircle cx='240' cy='120' r='10'/%3E%3C/g%3E%3C/svg%3E" width="480" height="240" alt="创作者驻留计划专题封面：两块画框与连接节点">
+          <div class="va-topic-body">
+            <span class="va-topic-status done">已完结</span>
+            <h3>创作者驻留计划第二季</h3>
+            <p>邀请六位不同领域的创作者在平台驻留一个月，公开他们的选题、素材与成片，形成可被学习的创作样本。</p>
+          </div>
+          <ul>
+            <li>驻留手记：从选题会到终剪的完整记录</li>
+            <li>联合创作：三人小组共同完成实验短片</li>
+            <li>成果展：全部作品在平台免费观看</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== S5 创作者矩阵 ========== -->
+  <section class="va-section va-anchor-offset" id="va-authors">
+    <div class="va-wrap">
+      <div class="va-sec-head">
+        <span class="va-sec-kicker">Creators</span>
+        <h2>创作者矩阵：先锋va资源网社区的中坚力量</h2>
+        <p>他们来自教程、测评、纪实、行业观察等不同方向，共同构成平台多元而真实的社区内容生态。</p>
+      </div>
+
+      <div class="va-author-grid">
+        <article class="va-author">
+          <div class="va-avatar" style="background:linear-gradient(140deg,#00e0a8,#7c6bff)">阿</div>
+          <div>
+            <div class="va-author-top">
+              <h3>阿骆的调色台</h3>
+              <span class="va-author-role">调色与技术流</span>
+            </div>
+            <div class="va-author-foot"><span>作品 <b>126</b></span><span>粉丝 <b>18.4 万</b></span><span>擅长：色彩管理</span></div>
+            <p>入行八年的自由调色师，长期服务商业广告与纪录片项目。在先锋va资源网更新色彩管理系列教程，习惯把复杂流程拆成可复用的小步骤，强调工程结构与参数留存，被不少新人视为入门的第一站。</p>
+            <a class="va-author-more" href="#va-videos">查看作品 →</a>
+          </div>
+        </article>
+
+        <article class="va-author">
+          <div class="va-avatar" style="background:linear-gradient(140deg,#7c6bff,#3a2f8f);color:#eef0ff">测</div>
+          <div>
+            <div class="va-author-top">
+              <h3>测一测工作室</h3>
+              <span class="va-author-role">深度测评</span>
+            </div>
+            <div class="va-author-foot"><span>作品 <b>89</b></span><span>粉丝 <b>12.7 万</b></span><span>擅长：工具体验</span></div>
+            <p>三人测评小组，坚持同条件对照与数据留档。选题偏工具与设备，结论常带条件限定，不轻易下绝对判断。内容在平台以长视频与图文补充形式双线发布，是社区里被引用较多的口碑来源。</p>
+            <a class="va-author-more" href="#va-videos">查看作品 →</a>
+          </div>
+        </article>
+
+        <article class="va-author">
+          <div class="va-avatar" style="background:linear-gradient(140deg,#ffb648,#c97a1a)">迟</div>
+          <div>
+            <div class="va-author-top">
+              <h3>迟野</h3>
+              <span class="va-author-role">日常记录</span>
+            </div>
+            <div class="va-author-foot"><span>作品 <b>210</b></span><span>粉丝 <b>9.6 万</b></span><span>擅长：创作幕后</span></div>
+            <p>全职独立创作者，喜欢记录创作本身。视频里常出现被否决的方案、半夜的废稿和反复修改的脚本，用近乎笨拙的方式呈现真实的创作过程，也因此收获了稳定的观众陪伴与信任。</p>
+            <a class="va-author-more" href="#va-videos">查看作品 →</a>
+          </div>
+        </article>
+
+        <article class="va-author">
+          <div class="va-avatar" style="background:linear-gradient(140deg,#4f8dff,#1c3d8f);color:#eef3ff">陆</div>
+          <div>
+            <div class="va-author-top">
+              <h3>陆沉观察</h3>
+              <span class="va-author-role">行业观察</span>
+            </div>
+            <div class="va-author-foot"><span>作品 <b>64</b></span><span>粉丝 <b>7.2 万</b></span><span>擅长：商业与趋势</span></div>
+            <p>前内容行业从业者，现专注视频资源与版权方向的观察写作。习惯用公开数据与从业者访谈交叉验证观点，不追热点，倾向用季度为单位做长期跟踪，在平台形成了稳定而克制的表达风格。</p>
+            <a class="va-author-more" href="#va-videos">查看作品 →</a>
+          </div>
+        </article>
+
+        <article class="va-author">
+          <div class="va-avatar" style="background:linear-gradient(140deg,#00e0a8,#0c8870)">剪</div>
+          <div>
+            <div class="va-author-top">
+              <h3>剪风工作室</h3>
+              <span class="va-author-role">剪辑思路</span>
+            </div>
+            <div class="va-author-foot"><span>作品 <b>152</b></span><span>粉丝 <b>15.1 万</b></span><span>擅长：节奏设计</span></div>
+            <p>专注短视频与商业片剪辑的工作室账号，内容以节奏拆解和分镜复盘为主。喜欢把成片倒推回原始脚本，展示每一个剪辑决策背后的取舍，为社区提供了大量可直接练习的模板与作业。</p>
+            <a class="va-author-more" href="#va-videos">查看作品 →</a>
+          </div>
+        </article>
+
+        <article class="va-author">
+          <div class="va-avatar" style="background:linear-gradient(140deg,#ff7a9c,#8f2c46);color:#fff0f4">南</div>
+          <div>
+            <div class="va-author-top">
+              <h3>南岸记录</h3>
+              <span class="va-author-role">纪实影像</span>
+            </div>
+            <div class="va-author-foot"><span>作品 <b>73</b></span><span>粉丝 <b>6.8 万</b></span><span>擅长：在地文化</span></div>
+            <p>常驻南方城市的纪录片爱好者，用轻设备记录街区与人。作品节奏缓慢、声音优先，偏爱环境同期声。在先锋va资源网分享城市探索与在地文化影像，也乐于公开自己的拍摄手记与失败经验。</p>
+            <a class="va-author-more" href="#va-videos">查看作品 →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== S6 关键词解析 / 品牌深度 ========== -->
+  <section class="va-section va-deep va-anchor-offset" id="va-about">
+    <div class="va-wrap">
+      <div class="va-sec-head">
+        <span class="va-sec-kicker">Brand Insight</span>
+        <h2>深度解析：先锋va资源网是一个怎样的视频品牌</h2>
+        <p>从品牌定位、内容生态到运营机制，完整说明这个平台为什么值得创作者与企业长期信赖。</p>
+      </div>
+
+      <div class="va-deep-inner">
+        <div class="va-deep-article">
+          <h3>一、品牌定位：一个以资源为起点的视频内容平台</h3>
+          <p>先锋va资源网并不是一个单纯堆砌素材的下载站，而是一个以视频资源为起点、向内容生产全链路延伸的品牌。对很多独立创作者而言，项目最难的部分往往不是拍摄，而是找到一个可靠、清晰、可追溯的素材来源，并在授权范围内安心使用。先锋va资源网围绕这一真实痛点构建产品：资源以统一规范入库，每一份素材都标注分辨率、时长、拍摄条件与授权范围；教程与测评内容则把这些素材放进具体场景，让用户看得懂、用得上。作为官方网站，平台在企业级内容管理与社区活力之间保持平衡，既服务小型团队的日常产出，也承载大型项目的资源调取需求。</p>
+          <p>品牌名中的“先锋”二字，指向的是对行业变化的敏感度。视频资源领域近几年变化很快：分发渠道更分散、授权规则更细化、创作者对品质的要求更高。平台选择主动跟进这些变化，用<strong>持续运营</strong>的方式更新资源库与知识内容，而不是一次性上线后长期停滞。这种定位让先锋va资源网在同类平台中形成了较为清晰的辨识度：专业、克制、重视品质与正版。</p>
+
+          <h3>二、内容生态：教程、测评、纪实与观察四条主线</h3>
+          <p>打开平台首页，能看到内容大致分为四条主线。第一条是<strong>教程干货</strong>，覆盖剪辑、调色、录音、导出与项目管理，强调可复用与可练习；第二条是<strong>深度测评</strong>，坚持同条件对照，给出带条件限定的结论，避免夸张口径；第三条是<strong>纪实与在地文化</strong>，用缓慢的镜头记录城市街区与普通人的日常，让平台不至于只剩工具理性；第四条是<strong>行业观察与人物访谈</strong>，从版权、分账、平台机制等角度提供长期视角。四条主线彼此支撑，构成了一个有层次的内容生态。</p>
+          <p>值得一提的是，平台对创作者的要求并不止于“投稿通过”。编辑组会与作者一起讨论选题角度、素材合规性与成片节奏，必要时提供资源支持。这种协作关系让内容品质相对稳定，也让社区里的交流更像同行之间的互相打磨，而不是流量竞赛。平台希望传递的价值是<strong>真实、温暖、有力量</strong>的影像，而不是速朽的爆款。</p>
+
+          <h3>三、运营机制：创作者扶持、正版授权与社区共治</h3>
+          <p>在运营层面，先锋va资源网做了三件长期的事。第一是<strong>创作者扶持计划</strong>，按季度评选新锐作者，提供资源额度、官方推荐位与联合创作机会，帮助新人跨过最初的冷启动阶段。第二是<strong>正版授权体系</strong>，所有入库资源均可追溯来源，商用与二次创作边界清晰，企业客户可以按项目采购，个人创作者也能在授权范围内安心使用。第三是<strong>社区共治</strong>，用户可以对资源标注、内容质量与授权信息提出修正建议，经审核后更新，形成开放但有序的维护机制。</p>
+          <p>这三件事共同支撑了平台的口碑。对用户来说，选择先锋va资源网意味着更少的时间浪费与更低的合规风险；对创作者来说，这里意味着更公平的曝光机会与更清晰的成长路径；对企业来说，这是一个可以长期合作的<strong>值得信赖</strong>的内容伙伴。平台也在持续完善搜索、标签筛选与资源版本管理，让“找得到、用得上、说得清”成为日常体验。</p>
+
+          <h3>四、未来方向：把资源能力变成行业基础设施</h3>
+          <p>面向未来，先锋va资源网的目标不止于做一个好用的资源库，而是希望把资源能力沉淀为视频行业的基础设施。具体来说，平台会继续扩充高清与正版资源的覆盖范围，完善面向企业的项目协作功能，并在创作者教育上投入更多精力，例如系统化的课程、公开的评审标准与可复用的项目模板。与此同时，平台也会保持对新兴创作者与多元题材的包容，让不同规模、不同方向的团队都能在这里找到位置。</p>
+          <p>我们相信，一个视频品牌的真正影响力，来自它是否帮助创作者把作品做完、做好，并让观众看到值得被看到的内容。先锋va资源网会沿着这条路径继续走下去，用原创、正版与专业，陪伴每一位创作者的成长。</p>
+        </div>
+
+        <aside class="va-deep-side">
+          <div class="va-aside-card">
+            <h4>平台核心数据</h4>
+            <ul>
+              <li><span>原创高清资源</span><b>12,600+</b></li>
+              <li><span>签约创作者</span><b>860+</b></li>
+              <li><span>累计服务团队</span><b>4,300+</b></li>
+              <li><span>用户好评率</span><b>98%</b></li>
+              <li><span>资源更新频率</span><b>每周 3 次</b></li>
+            </ul>
+          </div>
+          <div class="va-aside-card">
+            <h4>品牌关键词</h4>
+            <ul>
+              <li><span>官方网站</span><b>先锋va资源网</b></li>
+              <li><span>内容方向</span><b>视频资源</b></li>
+              <li><span>运营理念</span><b>用户至上</b></li>
+              <li><span>品质承诺</span><b>正版高清</b></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== S6 评价 双列短评 + 评分摘要 ========== -->
+  <section class="va-section va-anchor-offset" id="va-comments">
+    <div class="va-wrap">
+      <div class="va-sec-head">
+        <span class="va-sec-kicker">Community Voice</span>
+        <h2>用户口碑：来自先锋va资源网社区的真实评价</h2>
+        <p>来自独立创作者、企业内容团队与学生用户的不同声音，长度与关注点各不相同，共同拼出一个更真实的平台印象。</p>
+      </div>
+
+      <div class="va-score">
+        <div>
+          <div class="va-score-num">4.8</div>
+          <div class="va-score-txt">综合评分 / 5.0<br>基于 2,146 条有效评价</div>
+        </div>
+        <div class="va-score-bars">
+          <div class="va-score-bar"><span>资源质量</span><i style="width:96%"></i><span>96%</span></div>
+          <div class="va-score-bar"><span>授权清晰</span><i style="width:93%"></i><span>93%</span></div>
+          <div class="va-score-bar"><span>内容更新</span><i style="width:90%"></i><span>90%</span></div>
+          <div class="va-score-bar"><span>社区氛围</span><i style="width:95%"></i><span>95%</span></div>
+        </div>
+      </div>
+
+      <div class="va-comments-grid">
+        <article class="va-comment">
+          <div class="va-comment-head">
+            <span class="va-comment-avatar" style="background:linear-gradient(140deg,#00e0a8,#0a8f74)">林</span>
+            <div><strong>林间剪片人</strong> <span>独立创作者</span></div>
+          </div>
+          <p>用了半年，最直接的感受是省时间。以前找一段能商用的空镜要翻好几个站，现在标签筛选一下就能定位，授权说明也写得清楚，甲方问起来能直接给链接说明。</p>
+          <div class="va-comment-foot"><span>有用 <b>128</b></span><span>2 天前</span></div>
+        </article>
+
+        <article class="va-comment">
+          <div class="va-comment-head">
+            <span class="va-comment-avatar" style="background:linear-gradient(140deg,#7c6bff,#41339c);color:#eef0ff">周</span>
+            <div><strong>周老师带学生</strong> <span>高校影视课程教师</span></div>
+          </div>
+          <p>把这里的教程当作课堂补充材料已经两个学期了。优点是步骤拆得细，学生能跟着做；测评部分有对照条件，适合讲“如何判断一个结论是否可靠”，这点比单纯给答案更有价值。</p>
+          <div class="va-comment-foot"><span>有用 <b>96</b></span><span>4 天前</span></div>
+        </article>
+
+        <article class="va-comment">
+          <div class="va-comment-head">
+            <span class="va-comment-avatar" style="background:linear-gradient(140deg,#ffb648,#b57618)">何</span>
+            <div><strong>何小满</strong> <span>企业内容运营</span></div>
+          </div>
+          <p>我们团队采购过一季度的资源包，流程比想象中顺。合同、授权书、发票都能一次走完，素材的版本管理对多人协作很友好。唯一希望是能再增加一些行业垂直场景的素材。</p>
+          <div class="va-comment-foot"><span>有用 <b>74</b></span><span>6 天前</span></div>
+        </article>
+
+        <article class="va-comment">
+          <div class="va-comment-head">
+            <span class="va-comment-avatar" style="background:linear-gradient(140deg,#4f8dff,#1f3f96);color:#eef3ff">秦</span>
+            <div><strong>秦岭以北</strong> <span>摄影爱好者</span></div>
+          </div>
+          <p>喜欢纪实那一栏。看多了工具类内容，偶尔刷到一段安静的街区影像，会觉得很舒服。作者会写拍摄手记，哪怕是失败的尝试也照实说，这种真实感挺难得的。</p>
+          <div class="va-comment-foot"><span>有用 <b>61</b></span><span>1 周前</span></div>
+        </article>
+
+        <article class="va-comment">
+          <div class="va-comment-head">
+            <span class="va-comment-avatar" style="background:linear-gradient(140deg,#ff7a9c,#a03452);color:#fff0f4">许</span>
+            <div><strong>许同学</strong> <span>影视专业学生</span></div>
+          </div>
+          <p>作为学生，预算有限，免费区的资源质量已经足够做课程作业了。投稿过一次，编辑给了挺详细的修改建议，虽然最后没被推荐，但那份意见我留着当笔记看。</p>
+          <div class="va-comment-foot"><span>有用 <b>52</b></span><span>1 周前</span></div>
+        </article>
+
+        <article class="va-comment">
+          <div class="va-comment-head">
+            <span class="va-comment-avatar" style="background:linear-gradient(140deg,#00e0a8,#3a4fd6)">老</span>
+            <div><strong>老周的后期间</strong> <span>自由剪辑师</span></div>
+          </div>
+          <p>建议再增加按项目类型筛选的入口，比如广告、纪录片、短视频各一套预设。总体已经很好了，提这个是因为我一天要切换好几种项目，能少点几下就少点几下。</p>
+          <div class="va-comment-foot"><span>有用 <b>47</b></span><span>2 周前</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== S7 企业动态 + FAQ ========== -->
+  <section class="va-section va-anchor-offset" id="va-news">
+    <div class="va-wrap">
+      <div class="va-two-col">
+        <div>
+          <div class="va-sec-head">
+            <span class="va-sec-kicker">Company News</span>
+            <h2>企业动态：先锋va资源网的近期官方发布</h2>
+            <p>平台更新、计划公布与社区活动，均以官方发布为准。</p>
+          </div>
+          <div class="va-news-list">
+            <article class="va-news">
+              <div class="va-news-date">11/20<em>2026</em></div>
+              <div>
+                <h3>冬季创作挑战赛开放报名，投稿与投票同步启动</h3>
+                <p>本届赛事新增“实验影像”赛道，鼓励使用平台正版素材进行形式探索，评审团由编辑组与五位资深作者组成，12 月 25 日截止收稿。</p>
+              </div>
+            </article>
+            <article class="va-news">
+              <div class="va-news-date">11/18<em>2026</em></div>
+              <div>
+                <h3>高清母带下载专区上线，支持创作者授权分发</h3>
+                <p>专区首批上线 320 条高清视频资源，全部标注拍摄设备、码率与授权范围，创作者可在授权范围内自行分发与二次创作。</p>
+              </div>
+            </article>
+            <article class="va-news">
+              <div class="va-news-date">11/15<em>2026</em></div>
+              <div>
+                <h3>创作者扶持计划第三期名单公布</h3>
+                <p>本期共 18 位新锐作者入选，覆盖教程、纪实、测评与实验影像方向，平台将提供为期三个月的资源额度与联合创作机会。</p>
+              </div>
+            </article>
+            <article class="va-news">
+              <div class="va-news-date">11/12<em>2026</em></div>
+              <div>
+                <h3>搜索与标签筛选功能完成升级</h3>
+                <p>支持按分辨率、时长、授权类型与主题标签组合检索，搜索结果页新增相关教程与作者推荐，帮助用户更快找到可用资源。</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="va-anchor-offset" id="va-faq">
+          <div class="va-sec-head">
+            <span class="va-sec-kicker">FAQ</span>
+            <h2>帮助中心</h2>
+            <p>关于资源、授权与投稿的常见问题。</p>
+          </div>
+          <div class="va-faq">
+            <details open>
+              <summary>平台上的视频资源可以商用吗？</summary>
+              <p>可以，但需区分具体授权类型。每条资源详情页都会标注授权范围，包含个人学习、商业项目、二次创作等不同选项。商用前请核对授权说明，企业客户可按项目采购并获取授权文件。</p>
+            </details>
+            <details>
+              <summary>如何申请成为签约创作者？</summary>
+              <p>注册账号后在“投稿入口”提交作品与简介，编辑组会在七个工作日内回复。我们更看重内容的稳定性与真实性，而不是单条爆款数据。</p>
+            </details>
+            <details>
+              <summary>投稿的作品必须是首发吗？</summary>
+              <p>不强制首发，但需要在投稿时说明已发布渠道。平台鼓励原创与正版内容，如涉及他人素材请提前取得授权并注明来源。</p>
+            </details>
+            <details>
+              <summary>资源下载后可以再次分发吗？</summary>
+              <p>默认不允许转授权或再分发。若需在团队内部共享，可使用平台的项目协作功能；对外分发需另行确认授权条款。</p>
+            </details>
+            <details>
+              <summary>创作挑战赛的评审标准是什么？</summary>
+              <p>评审从选题完成度、影像表达、素材合规性与剪辑节奏四个维度综合打分，实验影像赛道额外关注形式创新。往届评审意见会在赛后公开。</p>
+            </details>
+            <details>
+              <summary>企业客户如何申请批量资源采购？</summary>
+              <p>可通过页面底部的联系渠道提交需求，说明项目类型、资源数量与使用周期，商务团队会提供定制方案与合规文件。</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== S7 合作品牌 ============ -->
+  <section class="va-section">
+    <div class="va-wrap">
+      <div class="va-sec-head">
+        <span class="va-sec-kicker">Partners</span>
+        <h2>合作品牌：与先锋va资源网共同成长的伙伴</h2>
+        <p>平台与设备、软件、教育及内容机构保持长期合作，共同推动视频资源生态的规范化与专业化。</p>
+      </div>
+      <div class="va-partners">
+        <div class="va-partner"><b>镜界器材</b><span>影像设备支持</span></div>
+        <div class="va-partner"><b>帧率软件</b><span>剪辑工具合作</span></div>
+        <div class="va-partner"><b>光影学院</b><span>课程内容共建</span></div>
+        <div class="va-partner"><b>南方影展</b><span>展映与赛事合作</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== S7 投稿 CTA ========== -->
+  <section class="va-section" style="border-top:none;padding-top:0">
+    <div class="va-cta-band">
+      <div>
+        <h2>把你的作品，放进先锋va资源网的官方推荐位</h2>
+        <p>无论你是刚起步的新人，还是稳定产出的团队，这里都有适合你的位置。投稿、参赛、合作，随时开始。</p>
+      </div>
+      <div class="va-hero-actions">
+        <button class="va-btn va-btn-primary" data-va-modal="submit">立即投稿</button>
+        <button class="va-btn va-btn-ghost" data-va-modal="share">分享给同行</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="va-footer">
+  <div class="va-wrap">
+    <div class="va-footer-grid">
+      <div class="va-footer-brand">
+        <a class="va-logo" href="#va-hero">
+          <span class="va-logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="#05130f"><path d="M6 3l14 9-14 9z"/></svg>
+          </span>
+          <span class="va-logo-txt">
+            <span class="va-logo-name">先锋va资源网</span>
+            <span class="va-logo-sub">Va Resource Studio</span>
+          </span>
+        </a>
+        <p>先锋va资源网官方网站 · 原创高清视频资源平台。我们坚持正版授权与持续运营，用专业与匠心构建值得信赖的内容生态，服务创作者与企业团队。</p>
+      </div>
+      <div>
+        <h4>内容栏目</h4>
+        <ul>
+          <li><a href="#va-videos">视频资源</a></li>
+          <li><a href="#va-topics">专题企划</a></li>
+          <li><a href="#va-authors">创作者矩阵</a></li>
+          <li><a href="#va-about">品牌解析</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于平台</h4>
+        <ul>
+          <li><a href="#va-news">企业动态</a></li>
+          <li><a href="#va-comments">用户口碑</a></li>
+          <li><a href="#va-faq">帮助中心</a></li>
+          <li><a href="#va-hero">投稿与合作</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>联系我们</h4>
+        <ul>
+          <li>商务合作：bd@va-resource.example</li>
+          <li>内容投稿：submit@va-resource.example</li>
+          <li>工作时间：周一至周五 10:00–19:00</li>
+          <li><button class="va-footer-linklike" data-va-modal="submit" style="color:inherit;font-size:12.5px;padding:5px 0">在线提交需求 →</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="va-footer-bottom">
+      <span>© 2026 先锋va资源网 官方网站 · 版权所有 · 持续运营中</span>
+      <span>正版授权 · 高清品质 · 用户至上</span>
+    </div>
+  </div>
+</footer>
+
+<button class="va-to-top" id="vaToTop" aria-label="回到顶部">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<div class="va-toast" id="vaToast" role="status" aria-live="polite"></div>
+
+<!-- 投稿弹窗 -->
+<div class="va-modal" id="vaModalSubmit" role="dialog" aria-modal="true" aria-labelledby="vaSubmitTitle">
+  <div class="va-modal-box">
+    <div class="va-modal-head">
+      <h3 id="vaSubmitTitle">投稿与合作登记</h3>
+      <button class="va-modal-close" data-va-close aria-label="关闭">✕</button>
+    </div>
+    <p>留下基本信息，编辑组会在七个工作日内与你联系。请确保作品为原创或已取得合法授权。</p>
+    <label for="vaSubmitName">称呼</label>
+    <input id="vaSubmitName" type="text" placeholder="如何称呼你">
+    <label for="vaSubmitContact">联系方式</label>
+    <input id="vaSubmitContact" type="text" placeholder="邮箱或常用联系方式">
+    <label for="vaSubmitType">类型</label>
+    <select id="vaSubmitType">
+      <option>视频作品投稿</option>
+      <option>创作挑战赛报名</option>
+      <option>企业资源采购</option>
+      <option>媒体与品牌合作</option>
+    </select>
+    <label for="vaSubmitDesc">补充说明</label>
+    <textarea id="vaSubmitDesc" placeholder="简单描述你的作品或需求"></textarea>
+    <button class="va-btn va-btn-primary" id="vaSubmitSend">提交登记</button>
+  </div>
+</div>
+
+<!-- 分享弹窗 -->
+<div class="va-modal" id="vaModalShare" role="dialog" aria-modal="true" aria-labelledby="vaShareTitle">
+  <div class="va-modal-box">
+    <div class="va-modal-head">
+      <h3 id="vaShareTitle">分享先锋va资源网</h3>
+      <button class="va-modal-close" data-va-close aria-label="关闭">✕</button>
+    </div>
+    <p>把官网推荐给同行，或复制链接分享到常用渠道。以下为站内分享入口示意。</p>
+    <div class="va-share-row">
+      <button class="va-share-chip" data-va-copy>复制链接</button>
+      <button class="va-share-chip" data-va-share-tip="微信">微信</button>
+      <button class="va-share-chip" data-va-share-tip="微博">微博</button>
+      <button class="va-share-chip" data-va-share-tip="QQ">QQ</button>
+    </div>
+  </div>
+</div>
+
+<!-- 作者信息弹窗 -->
+<div class="va-modal" id="vaModalAuthor" role="dialog" aria-modal="true" aria-labelledby="vaAuthorTitle">
+  <div class="va-modal-box">
+    <div class="va-modal-head">
+      <h3 id="vaAuthorTitle">资源编辑组</h3>
+      <button class="va-modal-close" data-va-close aria-label="关闭">✕</button>
+    </div>
+    <p>先锋va资源网官方内容团队，负责资源入库审核、专题策划与教程制作。本期焦点《从素材库到成片：一套可复用的高清视频资源工作流》由编辑组联合三位签约作者共同完成，视频中展示的工程结构与参数设置均可在资源库对应条目中查看。</p>
+    <p style="margin-top:10px;color:#8ea0c2;font-size:12.5px">擅长领域：资源管理 · 教程制作 · 项目协作</p>
+    <button class="va-btn va-btn-primary" data-va-close>知道了</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- Toast ---------- */
+  var toastTimer = null;
+  var toastEl = document.getElementById("vaToast");
+  function toast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove("show"); }, 2200);
+  }
+
+  /* ---------- 移动端导航折叠 ---------- */
+  var nav = document.getElementById("vaNav");
+  var menuToggle = document.getElementById("vaMenuToggle");
+  menuToggle.addEventListener("click", function(){
+    var open = nav.classList.toggle("open");
+    menuToggle.classList.toggle("open", open);
+    menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  nav.addEventListener("click", function(e){
+    if(e.target.tagName === "A"){
+      nav.classList.remove("open");
+      menuToggle.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded","false");
+    }
+  });
+
+  /* ---------- 搜索反馈 ---------- */
+  var searchInput = document.getElementById("vaSearchInput");
+  var searchBtn = document.getElementById("vaSearchBtn");
+  var searchFb = document.getElementById("vaSearchFeedback");
+  var searchData = [
+    "调色教程","正版授权","素材检索","剪辑节奏","深度测评","创作者访谈","资源管理","城市探索","实验影像","资源采购"
+  ];
+  function runSearch(){
+    var q = (searchInput.value || "").trim();
+    if(!q){
+      searchFb.innerHTML = '请输入关键词，例如 <b>调色教程</b> 或 <b>正版授权</b>';
+      searchFb.classList.add("on");
+      return;
+    }
+    var hit = searchData.filter(function(s){ return s.indexOf(q) > -1 || q.indexOf(s) > -1; });
+    if(hit.length){
+      searchFb.innerHTML = '已为你匹配到相关资源：<b>' + hit.slice(0,3).join("、") + '</b>，共 ' + hit.length + ' 个方向结果，可继续到「视频资源」查看。';
+    }else{
+      searchFb.innerHTML = '暂未直接匹配「<b>' + q.replace(/[<>&]/g,"") + '</b>」，建议尝试「教程」「测评」「创作者」等更短的关键词。';
+    }
+    searchFb.classList.add("on");
+  }
+  searchBtn.addEventListener("click", runSearch);
+  searchInput.addEventListener("keydown", function(e){
+    if(e.key === "Enter"){ e.preventDefault(); runSearch(); }
+  });
+  document.addEventListener("click", function(e){
+    if(!e.target.closest(".va-search")){ searchFb.classList.remove("on"); }
+  });
+
+  /* ---------- 点赞 / 收藏 ---------- */
+  document.querySelectorAll("[data-va-like]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var on = btn.classList.toggle("liked");
+      if(btn.querySelector("span")){
+        btn.querySelector("span").textContent = on ? "已赞" : "点赞";
+      }else{
+        btn.textContent = on ? "已赞" : "点赞";
+      }
+      toast(on ? "已点赞，感谢支持" : "已取消点赞");
+    });
+  });
+  document.querySelectorAll("[data-va-save]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var on = btn.classList.toggle("saved");
+      if(btn.querySelector("span")){
+        btn.querySelector("span").textContent = on ? "已收藏" : "收藏";
+      }else{
+        btn.textContent = on ? "已收藏" : "收藏";
+      }
+      toast(on ? "已加入收藏夹" : "已从收藏夹移除");
+    });
+  });
+
+  /* ---------- 复制链接 ---------- */
+  function copyLink(){
+    var text = "先锋va资源网 - 原创高清视频资源平台官方网站";
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){
+        toast("已复制分享文案，可直接粘贴发送");
+      }).catch(function(){
+        toast("复制未成功，请手动选择文字复制");
+      });
+    }else{
+      toast("已生成分享文案：先锋va资源网官方网站");
+    }
+  }
+  document.querySelectorAll("[data-va-copy]").forEach(function(btn){
+    btn.addEventListener("click", copyLink);
+  });
+
+  /* ---------- 分享提示 ---------- */
+  document.querySelectorAll("[data-va-share-tip]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      toast("分享到" + btn.getAttribute("data-va-share-tip") + "的入口已生成（站内示意）");
+    });
+  });
+
+  /* ---------- 弹窗通用 ---------- */
+  var modals = {
+    submit: document.getElementById("vaModalSubmit"),
+    share: document.getElementById("vaModalShare"),
+    author: document.getElementById("vaModalAuthor")
+  };
+  function openModal(name){
+    var m = modals[name];
+    if(!m) return;
+    m.classList.add("on");
+    document.body.style.overflow = "hidden";
+  }
+  function closeAllModals(){
+    Object.keys(modals).forEach(function(k){ modals[k].classList.remove("on"); });
+    document.body.style.overflow = "";
+  }
+  document.querySelectorAll("[data-va-modal]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      openModal(btn.getAttribute("data-va-modal"));
+    });
+  });
+  document.querySelectorAll("[data-va-close]").forEach(function(btn){
+    btn.addEventListener("click", closeAllModals);
+  });
+  Object.keys(modals).forEach(function(k){
+    modals[k].addEventListener("click", function(e){
+      if(e.target === modals[k]) closeAllModals();
+    });
+  });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape") closeAllModals();
+  });
+
+  /* ---------- 投稿提交 ---------- */
+  document.getElementById("vaSubmitSend").addEventListener("click", function(){
+    var name = document.getElementById("vaSubmitName").value.trim();
+    var contact = document.getElementById("vaSubmitContact").value.trim();
+    if(!name || !contact){
+      toast("请填写称呼与联系方式后再提交");
+      return;
+    }
+    closeAllModals();
+    toast("登记已提交，编辑组将尽快与你联系");
+    document.getElementById("vaSubmitName").value = "";
+    document.getElementById("vaSubmitContact").value = "";
+    document.getElementById("vaSubmitDesc").value = "";
+  });
+
+  /* ---------- 回到顶部 ---------- */
+  var toTop = document.getElementById("vaToTop");
+  function onScroll(){
+    if(window.scrollY > 620){
+      toTop.classList.add("show");
+    }else{
+      toTop.classList.remove("show");
+    }
+  }
+  window.addEventListener("scroll", onScroll, {passive:true});
+  onScroll();
+  toTop.addEventListener("click", function(){
+    window.scrollTo({top:0, behavior:"smooth"});
+  });
+
+  /* ---------- 数字滚动（首屏数据） ---------- */
+  var counted = false;
+  var statEls = document.querySelectorAll("[data-va-count]");
+  function animateCount(){
+    if(counted) return;
+    counted = true;
+    statEls.forEach(function(el){
+      var target = parseInt(el.getAttribute("data-va-count"), 10);
+      var suffix = el.textContent.indexOf("%") > -1 ? "%" : (el.textContent.indexOf("+") > -1 ? "+" : "");
+      var start = 0;
+      var dur = 1100;
+      var t0 = null;
+      function step(ts){
+        if(!t0) t0 = ts;
+        var p = Math.min((ts - t0) / dur, 1);
+        var val = Math.floor(start + (target - start) * (1 - Math.pow(1 - p, 3)));
+        el.textContent = val.toLocaleString("en-US") + suffix;
+        if(p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+  if("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ animateCount(); io.disconnect(); }
+      });
+    }, {threshold:0.3});
+    var heroStats = document.querySelector(".va-hero-stats");
+    if(heroStats) io.observe(heroStats);
+  }
+})();
+</script>
+</body>
+  </html>
